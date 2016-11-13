@@ -1,5 +1,4 @@
 %define module	setuptools
-%define _xz_threads 0
  
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
@@ -8,7 +7,7 @@ Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/setuptools
-Source0:        http://pypi.python.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 Requires:	python-devel
