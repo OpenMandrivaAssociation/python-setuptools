@@ -1,5 +1,2 @@
-removed_sources:
-  setuptools-8.2.tar.gz: b4fcf74621c42aeef83b18ef5145f784bd14d9d8
 sources:
-  distribute-0.6.32.tar.gz: 65ae88517ac47bd4e0fb449b3b9a9bf85e8366c8
-  setuptools-11.3.tar.gz: 9d690913a87e40e24e9acf761fc3e572011d6169
+  setuptools-34.3.1.zip: 34eb73b8c72c96dd82aae5f717c15baadd07d00d
