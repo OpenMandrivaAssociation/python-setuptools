@@ -83,10 +83,6 @@ pushd python3
 popd
 
 %files
-<<<<<<< HEAD
-%doc python3/*.rst
-=======
->>>>>>> 3.0
 %{_bindir}/easy_install
 %{_bindir}/easy_install-%{py3_ver}
 %{py_puresitedir}/*
@@ -96,10 +92,6 @@ popd
 %{py_puresitedir}/pkg_resources
 
 %files -n python2-setuptools
-<<<<<<< HEAD
-%doc python2/*.rst
-=======
->>>>>>> 3.0
 %{_bindir}/easy_install-%{py2_ver}
 %{py2_puresitedir}/*
 %exclude %{py2_puresitedir}/pkg_resources
