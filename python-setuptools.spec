@@ -1,15 +1,18 @@
 %define module	setuptools
- 
+%define _xz_threads 0
+
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	24.1.0
+Version:	34.3.1
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/setuptools
-Source0:	https://files.pythonhosted.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
+Source0:        http://pypi.python.org/packages/source/s/setuptools/setuptools-%{version}.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python-packaging
+BuildRequires:	python-appdirs
 Requires:	python-devel
 Requires:	python-pkg-resources
 %rename	python-distribute
@@ -17,8 +20,8 @@ Provides:	python3-distribute
 Provides:	python3egg(setuptools)
 Provides:	python3egg(distribute)
 %description
-A collection of enhancements to the Python distutils that allow 
-you to more easily build and distribute Python packages, especially 
+A collection of enhancements to the Python distutils that allow
+you to more easily build and distribute Python packages, especially
 ones that have dependencies on other packages.
 
 %package -n python2-setuptools
@@ -28,6 +31,8 @@ Group:          Development/Python
 Provides:	pythonegg(setuptools)
 Provides:	pythonegg(distribute)
 BuildRequires:	pkgconfig(python2)
+BuildRequires:	python2-packaging
+BuildRequires:	python2-appdirs
 
 %package -n python-pkg-resources
 Summary: Runtime module to access python resources
@@ -78,7 +83,10 @@ pushd python3
 popd
 
 %files
+<<<<<<< HEAD
 %doc python3/*.rst
+=======
+>>>>>>> 3.0
 %{_bindir}/easy_install
 %{_bindir}/easy_install-%{py3_ver}
 %{py_puresitedir}/*
@@ -88,7 +96,10 @@ popd
 %{py_puresitedir}/pkg_resources
 
 %files -n python2-setuptools
+<<<<<<< HEAD
 %doc python2/*.rst
+=======
+>>>>>>> 3.0
 %{_bindir}/easy_install-%{py2_ver}
 %{py2_puresitedir}/*
 %exclude %{py2_puresitedir}/pkg_resources
