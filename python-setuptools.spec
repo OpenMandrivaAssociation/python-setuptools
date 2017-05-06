@@ -4,7 +4,7 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	34.3.1
-Release:	2
+Release:	3
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/setuptools
@@ -39,6 +39,7 @@ Summary: Runtime module to access python resources
 Group:	Development/Python
 Conflicts: python-setuptools < 0.6c9-2mdv
 Requires:	python-packaging
+Requires:	python-appdirs
 
 %description -n python-pkg-resources
 Module used to find and manage Python package/version dependencies and access
@@ -50,6 +51,7 @@ Group:  Development/Python
 Conflicts: python-setuptools < 0.6c9-2mdv
 Conflicts: python-pkg-resources < 6.1
 Requires:	python2-packaging
+Requires:	python2-appdirs
 
 %description -n python-pkg-resources
 Module used to find and manage Python package/version dependencies and access
