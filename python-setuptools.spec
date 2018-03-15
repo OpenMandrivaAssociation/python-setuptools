@@ -3,12 +3,12 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	38.4.0
-Release:	2
+Version:	38.5.2
+Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/setuptools
-Source0:        https://pypi.python.org/packages/41/5f/6da80400340fd48ba4ae1c673be4dc3821ac06cd9821ea60f9c7d32a009f/setuptools-%{version}.zip
+Source0:        https://pypi.python.org/packages/e0/02/2b14188e06ddf61e5b462e216b15d893e8472fca28b1b0c5d9272ad7e87c/setuptools-%{version}.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
@@ -19,6 +19,7 @@ Requires:	python-pkg-resources
 Provides:	python3-distribute
 Provides:	python3egg(setuptools)
 Provides:	python3egg(distribute)
+
 %description
 A collection of enhancements to the Python distutils that allow
 you to more easily build and distribute Python packages, especially
@@ -33,6 +34,11 @@ Provides:	pythonegg(distribute)
 BuildRequires:	pkgconfig(python2)
 BuildRequires:	python2-packaging
 BuildRequires:	python2-appdirs
+
+%description -n python2-setuptools
+A collection of enhancements to the Python distutils that allow
+you to more easily build and distribute Python packages, especially
+ones that have dependencies on other packages.
 
 %package -n python-pkg-resources
 Summary: Runtime module to access python resources
@@ -53,7 +59,7 @@ Conflicts: python-pkg-resources < 6.1
 Requires:	python2-packaging
 Requires:	python2-appdirs
 
-%description -n python-pkg-resources
+%description -n python2-pkg-resources
 Module used to find and manage Python package/version dependencies and access
 bundled files and resources, including those inside of zipped .egg files.
 
