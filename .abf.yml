@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   setuptools-39.2.0.zip: 83e75ec6b04423735e0a9a384b465c68f5206bcf
+sources:
+  setuptools-40.6.3.zip: 74b0dc738f72a21fe11f16af613166fd5694e436

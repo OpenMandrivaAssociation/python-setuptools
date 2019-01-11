@@ -3,8 +3,8 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	39.2.0
-Release:	2
+Version:	40.6.3
+Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/setuptools
@@ -73,11 +73,11 @@ cp -r python3 python2
 export CFLAGS="%{optflags}"
 
 pushd python3
-%__python setup.py build
+%__%py_build
 popd
 
 pushd python2
-%__python2 setup.py build
+python2 setup.py build
 popd
 
 %check
@@ -85,11 +85,11 @@ popd
 
 %install
 pushd python2
-%__python2 setup.py install --root=%{buildroot}
+python2 setup.py install --root=%{buildroot}
 popd
 
 pushd python3
-%__python setup.py install --root=%{buildroot}
+%__%py_install
 popd
 
 %files
