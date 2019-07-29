@@ -4,7 +4,7 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	41.0.1
-Release:	2
+Release:	3
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/setuptools
@@ -13,7 +13,6 @@ BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
 BuildRequires:	python-appdirs
-Requires:	python-devel
 Requires:	python-pkg-resources
 %rename	python-distribute
 Provides:	python3-distribute
