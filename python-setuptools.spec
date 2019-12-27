@@ -4,7 +4,7 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	42.0.2
-Release:	1
+Release:	2
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
@@ -91,6 +91,8 @@ cd -
 cd python3
 %__python setup.py install --root=%{buildroot}
 cd -
+
+find %{buildroot}%{python_sitelib} -name '*.exe' -delete
 
 %files
 %{_bindir}/easy_install
