@@ -3,12 +3,12 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	44.0.0
+Version:	45.0.0
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/b0/f3/44da7482ac6da3f36f68e253cb04de37365b3dba9036a3c70773b778b485/setuptools-44.0.0.zip
+Source0:	https://files.pythonhosted.org/packages/fd/76/3c7f726ed5c582019937f178d7478ce62716b7e8263344f1684cbe11ab3e/setuptools-45.0.0.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
