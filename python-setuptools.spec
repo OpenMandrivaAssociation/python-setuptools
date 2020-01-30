@@ -44,6 +44,7 @@ ones that have dependencies on other packages.
 Summary:	Runtime module to access python resources
 Group:		Development/Python
 Conflicts:	python-setuptools < 0.6c9-2mdv
+Provides:	python3-pkg-resources
 Requires:	python-packaging
 Requires:	python-appdirs
 
