@@ -3,12 +3,12 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	46.4.0
+Version:	49.2.0
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/ac/d6/0f6c0d9d0b07bbb2085e94a71aded1e137c7c9002ac54924bc1c0adf748a/setuptools-46.4.0.zip
+Source0:	https://files.pythonhosted.org/packages/2f/8e/38259f4a44944a92068d5ff77230511a4c685604b47a81318f9e5cf2cc24/setuptools-49.2.0.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
@@ -21,21 +21,6 @@ Provides:	python3egg(setuptools)
 Provides:	python3egg(distribute)
 
 %description
-A collection of enhancements to the Python distutils that allow
-you to more easily build and distribute Python packages, especially
-ones that have dependencies on other packages.
-
-%package -n python2-setuptools
-Summary:	Python Distutils Enhancements
-Group:		Development/Python
-%rename python2-distribute
-Provides:	pythonegg(setuptools)
-Provides:	pythonegg(distribute)
-BuildRequires:	pkgconfig(python2)
-BuildRequires:	python2-packaging
-BuildRequires:	python2-appdirs
-
-%description -n python2-setuptools
 A collection of enhancements to the Python distutils that allow
 you to more easily build and distribute Python packages, especially
 ones that have dependencies on other packages.
@@ -65,34 +50,18 @@ Module used to find and manage Python package/version dependencies and access
 bundled files and resources, including those inside of zipped .egg files.
 
 %prep
-%setup -qc -n setuptools-%{version}
-
-mv setuptools-%{version} python3
-cp -r python3 python2
+%autosetup -n %{module}-%{version}
 
 %build
 export CFLAGS="%{optflags}"
 
-cd python3
 %__python setup.py build
-cd -
-
-cd python2
-%__python2 setup.py build
-cd -
 
 %check
 #%__python setup.py test
 
 %install
-cd python2
-%__python2 setup.py install --root=%{buildroot}
-cd -
-
-cd python3
 %__python setup.py install --root=%{buildroot}
-cd -
-
 find %{buildroot}%{python_sitelib} -name '*.exe' -delete
 
 %files
@@ -103,11 +72,3 @@ find %{buildroot}%{python_sitelib} -name '*.exe' -delete
 
 %files -n python-pkg-resources
 %{py_puresitedir}/pkg_resources
-
-%files -n python2-setuptools
-%{_bindir}/easy_install-%{py2_ver}
-%{py2_puresitedir}/*
-%exclude %{py2_puresitedir}/pkg_resources
-
-%files -n python2-pkg-resources
-%{py2_puresitedir}/pkg_resources
