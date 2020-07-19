@@ -8,7 +8,7 @@ Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/2f/8e/38259f4a44944a92068d5ff77230511a4c685604b47a81318f9e5cf2cc24/setuptools-49.2.0.zip
+Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
@@ -34,18 +34,6 @@ Requires:	python-packaging
 Requires:	python-appdirs
 
 %description -n python-pkg-resources
-Module used to find and manage Python package/version dependencies and access
-bundled files and resources, including those inside of zipped .egg files.
-
-%package -n python2-pkg-resources
-Summary:	Runtime module to access python resources
-Group:		Development/Python
-Conflicts:	python-setuptools < 0.6c9-2mdv
-Conflicts:	python-pkg-resources < 6.1
-Requires:	python2-packaging
-Requires:	python2-appdirs
-
-%description -n python2-pkg-resources
 Module used to find and manage Python package/version dependencies and access
 bundled files and resources, including those inside of zipped .egg files.
 
