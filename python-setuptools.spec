@@ -3,12 +3,12 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	49.2.0
+Version:	49.6.0
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.zip
+Source0:	https://files.pythonhosted.org/packages/38/cc/db23dbe4efc464c3c0111fedf7d46de8888f05b09488d610f6f8ab6e2544/setuptools-49.6.0.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
