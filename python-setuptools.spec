@@ -1,14 +1,25 @@
 %define module setuptools
 %define _xz_threads 0
 
+# Disable rpmlint checks while bootstrapping: rpmlint needs
+# python-pkg_resources and will fail before it is built with the
+# correct version of python. (This hits e.g. when updating python to
+# a new major version)
+%bcond_without bootstrap
+%if %{with bootstrap}
+%define _build_pkgcheck /bin/true
+%define _build_pkgcheck_set /bin/true
+%define _build_pkgcheck_srpm /bin/true
+%endif
+
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	50.3.0
+Version:	50.3.2
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/7c/1b/9b68465658cda69f33c31c4dbd511ac5648835680ea8de87ce05c81f95bf/setuptools-50.3.0.zip
+Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-packaging
