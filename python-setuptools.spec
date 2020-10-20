@@ -15,14 +15,16 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	50.3.2
-Release:	2
+Release:	3
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
 Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
+%if %{without bootstrap}
 BuildRequires:	python-packaging
+%endif
 BuildRequires:	python-appdirs
 Requires:	python-pkg-resources
 %rename	python-distribute
@@ -41,7 +43,9 @@ Summary:	Runtime module to access python resources
 Group:		Development/Python
 Conflicts:	python-setuptools < 0.6c9-2mdv
 Provides:	python3-pkg-resources
+%if %{without bootstrap}
 Requires:	python-packaging
+%endif
 Requires:	python-appdirs
 
 %description -n python-pkg-resources
