@@ -14,7 +14,7 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	51.1.0
+Version:	51.1.2
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
