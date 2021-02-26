@@ -68,8 +68,6 @@ export CFLAGS="%{optflags}"
 find %{buildroot}%{python_sitelib} -name '*.exe' -delete
 
 %files
-%{_bindir}/easy_install
-%{_bindir}/easy_install-%{py3_ver}
 %{py_puresitedir}/*
 %exclude %{py_puresitedir}/pkg_resources
 
