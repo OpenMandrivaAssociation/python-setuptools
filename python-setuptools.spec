@@ -14,12 +14,12 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	53.1.0
+Version:	59.0.1
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/8f/6b/0dcf95d95086ce459152e4c0ac306f2dbbcf984177a2b8b77b320ebfbf22/setuptools-53.1.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/cd/9a/6fff2cee92de1d34c0e8d48bb2ccedb0899eebb2cfe7955584b53bdaded7/setuptools-59.0.1.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 %if %{without bootstrap}
