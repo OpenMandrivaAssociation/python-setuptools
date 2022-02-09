@@ -25,7 +25,6 @@ BuildRequires:	pkgconfig(python3)
 %if %{without bootstrap}
 BuildRequires:	python-packaging
 %endif
-BuildRequires:	python-appdirs
 Requires:	python-pkg-resources
 %rename	python-distribute
 Provides:	python3-distribute
@@ -46,7 +45,6 @@ Provides:	python3-pkg-resources
 %if %{without bootstrap}
 Requires:	python-packaging
 %endif
-Requires:	python-appdirs
 
 %description -n python-pkg-resources
 Module used to find and manage Python package/version dependencies and access
