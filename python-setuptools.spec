@@ -1,5 +1,4 @@
 %define module setuptools
-%define _xz_threads 0
 
 # Disable rpmlint checks while bootstrapping: rpmlint needs
 # python-pkg_resources and will fail before it is built with the
@@ -15,13 +14,13 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	60.9.3
-Release:	1
+Release:	2
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
 Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python)
 %if %{without bootstrap}
 BuildRequires:	python-packaging
 %endif
@@ -55,14 +54,13 @@ bundled files and resources, including those inside of zipped .egg files.
 
 %build
 export CFLAGS="%{optflags}"
+%py_build
 
-%__python setup.py build
-
-%check
+#check
 #%__python setup.py test
 
 %install
-%__python setup.py install --root=%{buildroot}
+%py_install
 find %{buildroot}%{python_sitelib} -name '*.exe' -delete
 
 %files
