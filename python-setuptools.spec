@@ -13,8 +13,8 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	67.6.1
-Release:	2
+Version:	67.8.0
+Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
