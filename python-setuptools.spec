@@ -13,7 +13,7 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	67.8.0
+Version:	68.2.2
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
