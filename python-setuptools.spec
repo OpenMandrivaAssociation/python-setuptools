@@ -14,22 +14,24 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	80.9.0
-Release:	2
+Release:	3
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
 Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python)
-%if %{without bootstrap}
-BuildRequires:	python-packaging
+%if %{with bootstrap}
+# The dependency generator doesn't work unless the `packaging` module is installed
+Provides:	python%{pyver}dist(setuptools) = %{version}
+%else
+BuildRequires:	python%{pyver}dist(packaging)
 %endif
 Requires:	python-pkg-resources
 %rename	python-distribute
+# For compatibility with packages built for other distros
 Provides:	python3-distribute
+# For compatibility with packages built for other distros
 Provides:	python3-setuptools = %{EVRD}
-Provides:	python3egg(setuptools)
-Provides:	python3egg(distribute)
 
 %description
 A collection of enhancements to the Python distutils that allow
@@ -40,9 +42,11 @@ ones that have dependencies on other packages.
 Summary:	Runtime module to access python resources
 Group:		Development/Python
 Conflicts:	python-setuptools < 0.6c9-2mdv
-Provides:	python3-pkg-resources
+# For compatibility with packages built for other distros
+Provides:	python3-pkg-resources = %{EVRD}
 %if %{without bootstrap}
-Requires:	python-packaging
+# The dependency generator doesn't work unless the `packaging` module is installed
+Requires:	python%{pyver}dist(packaging)
 %endif
 
 %description -n python-pkg-resources
@@ -54,13 +58,21 @@ bundled files and resources, including those inside of zipped .egg files.
 
 %build
 export CFLAGS="%{optflags}"
+%if %{with bootstrap}
+python setup.py build
+%else
 %py_build
+%endif
 
 #check
 #%__python setup.py test
 
 %install
+%if %{with bootstrap}
+python setup.py install --skip-build --root "%{buildroot}"
+%else
 %py_install
+%endif
 find %{buildroot}%{python_sitelib} -name '*.exe' -delete
 
 %files
