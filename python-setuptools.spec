@@ -20,12 +20,7 @@ Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
 Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz
 BuildArch:	noarch
-%if %{with bootstrap}
-# The dependency generator doesn't work unless the `packaging` module is installed
-Provides:	python%{pyver}dist(setuptools) = %{version}
-%else
 BuildRequires:	python%{pyver}dist(packaging)
-%endif
 Requires:	python-pkg-resources
 %rename	python-distribute
 # For compatibility with packages built for other distros
