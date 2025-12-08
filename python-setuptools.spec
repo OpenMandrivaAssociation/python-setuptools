@@ -14,7 +14,7 @@
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
 Version:	80.9.0
-Release:	3
+Release:	4
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
@@ -22,6 +22,8 @@ Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-
 BuildArch:	noarch
 BuildRequires:	python%{pyver}dist(packaging)
 Requires:	python-pkg-resources
+# Make the dependency generator great again
+Requires:	python%{pyver}dist(packaging)
 %rename	python-distribute
 # For compatibility with packages built for other distros
 Provides:	python3-distribute
