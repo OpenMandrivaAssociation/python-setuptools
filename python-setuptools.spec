@@ -13,12 +13,12 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	80.9.0
-Release:	4
+Version:	81.0.0
+Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
 Url:		https://pypi.org/project/setuptools/
-Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python%{pyver}dist(packaging)
 Requires:	python-pkg-resources
