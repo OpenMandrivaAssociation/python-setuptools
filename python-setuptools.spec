@@ -13,7 +13,7 @@
 
 Summary:	Python Distutils Enhancements
 Name:		python-%{module}
-Version:	81.0.0
+Version:	83.0.0
 Release:	1
 License:	Zope Public License (ZPL)
 Group:		Development/Python
@@ -51,7 +51,7 @@ Module used to find and manage Python package/version dependencies and access
 bundled files and resources, including those inside of zipped .egg files.
 
 %prep
-%autosetup -n %{module}-%{version}
+%autosetup -n setuptools-83.0.0
 
 %build
 export CFLAGS="%{optflags}"
